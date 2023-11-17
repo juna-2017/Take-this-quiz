@@ -1,0 +1,75 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* STYLING FOR INDEX.HTML */
+body{
+    background-color: #FFDDD2;
+}
+.start-screen{
+    background-color: #edf6f9;
+    width: 60%;
+}
+
+.start-screen h1 {
+    margin-top: 5px;
+    padding-left: 20px;
+    font-size: 50px;
+}
+
+.start-screen p{
+    font-size: 20px;
+    word-wrap: normal;
+}
+
+.btn-list {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* .answerbtn {
+    flex-direction: column;
+} */
+
+
+
+
+/*STYLING FOR SCORE.HTML*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul{
+    display: flex;
+    
+    list-style: none;
+}
+header ul li button {
+    background-color: #76c893;
+    margin-right: 3vw;
+    border:#76c893;
+    padding:2%;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%
+}
+
+th, td{
+    padding: 8px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
