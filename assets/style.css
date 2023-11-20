@@ -50,6 +50,11 @@ header h1 {
     color:var(--salmon);
 }
 
+#question{
+    
+    font-size: 30px;
+}
+
 .btn-list {
     display: flex;
     flex-direction: column;
@@ -59,9 +64,11 @@ header h1 {
 
 .btn-list button{
     background-color: var(--white);
+    border: var(--white);
     height: 30px;
     margin: 2px;
     font-size: 15px;
+    color: var(--green);
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 

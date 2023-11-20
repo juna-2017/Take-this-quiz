@@ -56,7 +56,16 @@ function displayQuestion(){
     btn4.textContent = questionList[index].choice4;
 }
 
+function showResult(answer){
+    var answerResult = document.createElement("p");
+    if(answer === questionList[index].correctAns){
+        answerResult.textContent = "Hooray🎉 You are correct!";
+    }else{
+        answerResult.textContent = "Wrong🤨 Incorrect!";
+    }
 
+    resultContainer.appendChild(answerResult);
+}
 
 
 
@@ -77,16 +86,6 @@ function checkAnswer(answer){
 
 }
 
-function showResult(answer){
-    var answerResult = document.createElement("p");
-    if(answer === questionList[index].correctAns){
-        answerResult.textContent = "Hooray🎉 You are correct!";
-    }else{
-        answerResult.textContent = "Wrong🤨 Incorrect!"
-    }
-
-    resultContainer.appendChild(answerResult);
-}
 
 function endQuiz(){
     clearInterval(timeCounter);

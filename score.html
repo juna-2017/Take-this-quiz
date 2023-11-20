@@ -1,12 +1,14 @@
 <!--This HTML page is where the scores will be displayed once the game is over -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Scoreboard</title>
 </head>
+
 <body class="score-html">
     <header>
         <h1>Scoreboard!</h1>
@@ -15,19 +17,22 @@
             <li><button id="clear">Clear Scores</button></li>
         </ul>
     </header>
-    
+
     <div class="container">
         <table>
             <thead>
                 <tr>
-                <th>Initials</th>
-                <th>Score</th>
-            </tr>
+                    <th>Initials</th>
+                    <th>Score</th>
+                </tr>
             </thead>
-            <tbody id="score-table"></tbody>
+            <tbody id="score-table">
+                <!-- As initials and scores get saved and added to the list, they will appear here -->
+            </tbody>
         </table>
     </div>
 
     <script src="./assets/score.js"></script>
 </body>
+
 </html>

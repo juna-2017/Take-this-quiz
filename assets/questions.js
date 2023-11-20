@@ -41,4 +41,21 @@ var questionList = [
         choice4: "Special Beam Cannon",
         correctAns: "Kamehameha"
     },
+    {
+        question: "What term is used when a Soul Reaper releases their sword, in the anime series 'Bleach'?",
+        choice1: "Haki",
+        choice2: "Hakai",
+        choice3: "Shikai",
+        choice4: "Bankai",
+        correctAns: "Bankai"
+    },
+    {
+        question: "Which of the following was never Hokage?",
+        choice1: "Shikamaru",
+        choice2: "Danzo",
+        choice3: "Konohamaru",
+        choice4: "Kakashi",
+        correctAns: "Konohamaru"
+
+    }
 ]
