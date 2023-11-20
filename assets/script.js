@@ -14,6 +14,7 @@ var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
 var timerBox = document.querySelector(".timer-box");
 var userInput = document.getElementById("userInput");
+var resultContainer = document.getElementById("result-container");
 
 // variables that I am working with
 var index = 0;
@@ -53,21 +54,38 @@ function displayQuestion(){
     btn2.textContent = questionList[index].choice2;
     btn3.textContent = questionList[index].choice3;
     btn4.textContent = questionList[index].choice4;
-    // choice1El.textContent = answer;
 }
+
+
+
+
 
 function checkAnswer(answer){
     if(answer === questionList[index].correctAns){
         index++
         score++
+        
         displayQuestion()
+        showResult()
     }
     else{
         index++
         seconds -= 5
+        showResult()
         displayQuestion()
     }
 
+}
+
+function showResult(answer){
+    var answerResult = document.createElement("p");
+    if(answer === questionList[index].correctAns){
+        answerResult.textContent = "Hooray🎉 You are correct!";
+    }else{
+        answerResult.textContent = "Wrong🤨 Incorrect!"
+    }
+
+    resultContainer.appendChild(answerResult);
 }
 
 function endQuiz(){
@@ -92,7 +110,6 @@ function storage(initials){
     } 
 }
 
-// when you click on choice you check if its right using questionList[current].correctAnswer then current++
 startBtn.addEventListener("click", startQuiz);
 btnList.addEventListener("click", ()=>{
     var choice = this.event.target.textContent
