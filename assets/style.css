@@ -4,8 +4,8 @@
     --lightgreen:#83c5be;
     --green:#006d77;
     --white:#edf6f9;
+    --black:#000;
 }
-
 
 .hide {
     display: none;
@@ -44,6 +44,12 @@ body {
 #startBtn{
     background-color: var(--lightgreen);
     margin-left: 10px;
+    height: 30px;
+}
+
+.scores{
+    background-color: var(--lightgreen);
+    height: 25px;
 }
 
 header h1 {
@@ -51,8 +57,7 @@ header h1 {
 }
 
 #question{
-    
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .btn-list {
@@ -64,12 +69,11 @@ header h1 {
 
 .btn-list button{
     background-color: var(--white);
-    border: var(--white);
-    height: 30px;
+    height: 35px;
     margin: 2px;
-    font-size: 15px;
-    color: var(--green);
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-size: 17px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 .quiz-container {
@@ -78,19 +82,31 @@ header h1 {
     text-align: center;
 }
 
-.line-break{
-    position: absolute;
+#result-container{
+    font-size: 23px;
+    font-weight: bold;
 }
 
-/* .answerbtn {
-    flex-direction: column;
-} */
+.score-container h3{
+    font-size: 1.7em;
+    margin-bottom: 10px;
+}
 
+#userInput{
+    height: 20px;
+}
 
+#submitBtn{
+    height: 27px;
+    background-color: var(--lightgreen);
+}
+
+#submitBtn:hover{
+    color: var(--white);
+}
 
 
 /*STYLING FOR SCORE.HTML*/
-
 
 header {
     display: flex;
@@ -99,7 +115,6 @@ header {
 
 header ul {
     display: flex;
-
     list-style: none;
 }
 
@@ -108,13 +123,16 @@ header ul li button {
     margin-right: 3vw;
     border: var(--lightgreen);
     padding: 2%;
-    color: var(--white);
+    color: var(--black);
 }
 
 a {
     text-decoration: none;
-    color: black;
-    
+    color: var(--black);
+}
+
+a:hover {
+    color: var(--white);
 }
 
 table {
@@ -127,4 +145,5 @@ td {
     padding: 8px;
     text-align: center;
     border-bottom: 2px solid #ddd;
+    font-size: 1.4em;
 }

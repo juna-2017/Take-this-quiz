@@ -22,6 +22,7 @@ var score = 0;
 var timeCounter;
 var seconds = 60;
 var userArray = [];
+var answerResult = "";
 
 
 // this function will start the quiz by starting the timer and displaying the first question once the start button is pressed
@@ -56,33 +57,44 @@ function displayQuestion(){
     btn4.textContent = questionList[index].choice4;
 }
 
-function showResult(answer){
-    var answerResult = document.createElement("p");
-    if(answer === questionList[index].correctAns){
-        answerResult.textContent = "Hooray🎉 You are correct!";
-    }else{
-        answerResult.textContent = "Wrong🤨 Incorrect!";
-    }
-
-    resultContainer.appendChild(answerResult);
-}
-
-
-
+// depending on the user answer choice, it will let the user know whether their answer is correct or not and then will display the next question
 function checkAnswer(answer){
+    answerResult = document.createElement("p");
+
     if(answer === questionList[index].correctAns){
+        
+        answerResult.textContent = "Hooray🎉 You are correct!";
+        answerResult.style.color = "#fe7f2d";
+        
         index++
         score++
+
+        clearResult()
         
-        displayQuestion()
-        showResult()
+        displayQuestion() 
+        
     }
     else{
         index++
-        seconds -= 5
-        showResult()
+        seconds -= 8
+
         displayQuestion()
+
+        answerResult.textContent = "Wrong🤨 You are incorrect!";
+        answerResult.style.color = "navy";
+        
+        
+        clearResult()
     }
+    
+    resultContainer.appendChild(answerResult);
+}
+
+// this function clears the answer result of the previous question
+function clearResult() {
+   setTimeout( ()=> { 
+    answerResult.textContent = "";
+}, 500);
 
 }
 
@@ -104,8 +116,6 @@ function storage(initials){
         userArray.push(user)
         localStorage.setItem("highscores", JSON.stringify(userArray))
         window.location.assign("score.html")
-
-
     } 
 }
 
@@ -114,6 +124,7 @@ btnList.addEventListener("click", ()=>{
     var choice = this.event.target.textContent
     checkAnswer(choice)
 })
+
 submitBtn.addEventListener("click", ()=>{
     var userInitials = userInput.value
     storage(userInitials);
